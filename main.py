@@ -16,9 +16,9 @@ async def on_ready():
 async def qr(ctx, *, data):
   if ctx.author.bot: return
   q = qrcode.make(data)
-	arr = io.BytesIO()
-	q.save(arr, format="PNG")
-	arr.seek(0)
-	await ctx.send(file=discord.File(fp=arr, filename="image.png"))
+  arr = io.BytesIO()
+  q.save(arr, format="PNG")
+  arr.seek(0)
+  await ctx.send(file=discord.File(fp=arr, filename="image.png"))
 
 bot.run(TOKEN)
